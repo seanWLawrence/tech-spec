@@ -1,0 +1,19 @@
+type User {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  firstName: String!
+  lastName: String!
+  email: String! @unique
+  specs: [Spec!]
+}
+
+type Spec {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  title: String!
+  content: String!
+  isPrivate: Boolean! @default (value: false)
+  author: User!
+}
